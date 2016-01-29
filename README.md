@@ -1,0 +1,1 @@
+# Perlengkapan-Ubuntu
