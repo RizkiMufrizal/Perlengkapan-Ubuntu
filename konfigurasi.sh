@@ -13,6 +13,10 @@ read email
 echo -n "masukkan user linux anda : "
 read user
 
+echo "install node js"
+nvm install stable
+npm install -g cordova ionic gulp grunt-cli bower coffeelint coffee-script nodemon sails typescript webpack yo generator-karma generator-angular
+
 echo "konfigurasi git"
 git config --global user.name "$username"
 git config --global user.email "$email"
@@ -42,7 +46,7 @@ sudo chmod a+x /usr/share/applications/Spring Tool Suite.desktop
 sudo chmod a+x /usr/share/applications/Visual Studio Code.desktop
 
 echo "konfigurasi gcc dan g++"
-sudo update-alternatives --remove-all gcc 
+sudo update-alternatives --remove-all gcc
 sudo update-alternatives --remove-all g++
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 20
