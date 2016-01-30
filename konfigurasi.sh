@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# programming.sh
+# konfigurasi.sh
 # Copyright (C) 2016 Rizki Mufrizal <mufrizalrizki@gmail.com>
 #
 # Distributed under terms of the MIT license.
