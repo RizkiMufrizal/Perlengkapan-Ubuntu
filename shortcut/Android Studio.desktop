@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Icon[en_US]=/home/rizki/programming/IDE/android-studio/bin/studio.png
+Exec=/home/rizki/programming/IDE/android-studio/bin/studio.sh
+Name[en_US]=Android Studio
+Name=Android Studio
+Icon=/home/rizki/programming/IDE/android-studio/bin/studio.png
