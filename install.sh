@@ -78,7 +78,7 @@ echo "dist-upgrade"
 sudo apt-get dist-upgrade -y
 
 echo "install aplikasi"
-sudo apt-get install atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer ubuntu-tweak postgresql-9.4 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras ubuntu-restricted-extras synaptic libavcodec-extra compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager nautilus-open-terminal apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mariadb-server mariadb-client mongodb-org clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim
+sudo apt-get install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer ubuntu-tweak postgresql-9.4 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras ubuntu-restricted-extras synaptic libavcodec-extra compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager nautilus-open-terminal apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mariadb-server mariadb-client mongodb-org clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim
 
 echo "konfigurasi php"
 sudo chmod 777 -R /var/www/
