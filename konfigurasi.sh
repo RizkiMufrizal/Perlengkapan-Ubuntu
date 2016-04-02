@@ -35,7 +35,7 @@ echo "COMPOSER_HOME=/home/$user/programming/build-tool/composer" | tee -a /home/
 echo "NVM_HOME=/home/$user/.nvm" | tee -a /home/$user/environment
 echo "REDIS_HOME=/home/$user/programming/database/redis" | tee -a /home/$user/environment
 echo "RVM_HOME=/home/$user/.rvm" | tee -a /home/$user/environment
-echo "\nPATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/home/$user/programming/build-tool/apache-ant/bin:/home/$user/programming/build-tool/apache-maven/bin:/home/$user/programming/build-tool/gradle/bin:/home/$user/programming/build-tool/play-framework:/home/$user/programming/build-tool/composer:/home/$user/.nvm:/home/$user/Android/Sdk/platform-tools:/home/$user/Android/Sdk/tools:/home/$user/.rvm/bin:file:/home/$user/programming/database/redis/src\"" | tee -a /home/$user/environment
+echo "\nPATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/home/$user/programming/build-tool/apache-ant/bin:/home/$user/programming/build-tool/apache-maven/bin:/home/$user/programming/build-tool/gradle/bin:/home/$user/programming/build-tool/play-framework/bin:/home/$user/programming/build-tool/composer:/home/$user/.nvm:/home/$user/Android/Sdk/platform-tools:/home/$user/Android/Sdk/tools:/home/$user/.rvm/bin:file:/home/$user/programming/database/redis/src\"" | tee -a /home/$user/environment
 sudo cp environment /etc/environment
 
 echo "konfigurasi shortcut"
