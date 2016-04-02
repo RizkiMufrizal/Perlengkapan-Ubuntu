@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 #
 # install.sh
 # Copyright (C) 2016 Rizki Mufrizal <mufrizalrizki@gmail.com>
@@ -24,6 +24,7 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 echo "tambah repo gimp"
 sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
 
+# baru trusty
 echo "tambah repo ubuntu tweak"
 sudo add-apt-repository -y ppa:tualatrix/ppa
 
@@ -42,31 +43,35 @@ sudo add-apt-repository -y ppa:ondrej/php-7.0
 echo "tambah repo apache server"
 sudo add-apt-repository -y ppa:ondrej/apache2
 
+# baru trusty
 echo "tambah repo clementine"
 sudo add-apt-repository -y ppa:me-davidsansome/clementine
-
-echo "tambah repo mariadb"
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb [arch=amd64,i386] http://mariadb.biz.net.id/repo/10.1/ubuntu trusty main'
-
-echo "tambah repository mongodb"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-
-echo "tambah repo postgresql"
-echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
-sudo apt-key add -
-
-echo "tambah repo virtual box"
-echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" | sudo tee -a /etc/apt/sources.list
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 
 echo "tambah repo sublime text"
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 
 echo "tambah repo gcc"
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+
+# baru trusty
+echo "tambah repo mariadb"
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb [arch=amd64,i386] http://mariadb.biz.net.id/repo/10.1/ubuntu trusty main'
+
+# baru trusty
+echo "tambah repository mongodb"
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+
+echo "tambah repo postgresql"
+echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
+sudo apt-key add -
+
+# baru trusty
+echo "tambah repo virtual box"
+echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" | sudo tee -a /etc/apt/sources.list
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 
 echo "update"
 sudo apt-get update
