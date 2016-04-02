@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 #
 # programming.sh
 # Copyright (C) 2016 Rizki Mufrizal <mufrizalrizki@gmail.com>
@@ -33,11 +33,11 @@ rmdir apache-ant-1.9.6/
 
 echo "install gradle"
 mkdir -p /home/$user/programming/build-tool/gradle
-wget https://downloads.gradle.org/distributions/gradle-2.10-all.zip
-unzip gradle-2.10-all.zip
-rm gradle-2.10-all.zip
-mv gradle-2.10/* /home/$user/programming/build-tool/gradle/
-rmdir gradle-2.10/
+wget https://downloads.gradle.org/distributions/gradle-2.12-all.zip
+unzip gradle-2.12-all.zip
+rm gradle-2.12-all.zip
+mv gradle-2.12/* /home/$user/programming/build-tool/gradle/
+rmdir gradle-2.12/
 
 echo "install composer"
 mkdir -p /home/$user/programming/build-tool/composer
@@ -46,14 +46,14 @@ mv composer.phar /home/$user/programming/build-tool/composer/
 
 echo "install play framework"
 mkdir -p /home/$user/programming/build-tool/play-framework
-wget https://downloads.typesafe.com/typesafe-activator/1.3.7/typesafe-activator-1.3.7-minimal.zip
-unzip typesafe-activator-1.3.7-minimal.zip
-rm typesafe-activator-1.3.7-minimal.zip
-mv activator-1.3.7-minimal/* /home/$user/programming/build-tool/play-framework/
-rmdir activator-1.3.7-minimal/
+wget https://downloads.typesafe.com/typesafe-activator/1.3.9/typesafe-activator-1.3.9-minimal.zip
+unzip typesafe-activator-1.3.9-minimal.zip
+rm typesafe-activator-1.3.9-minimal.zip
+mv activator-1.3.9-minimal/* /home/$user/programming/build-tool/play-framework/
+rmdir activator-1.3.9-minimal/
 
 echo "install node js"
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 
 echo "install ruby"
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
