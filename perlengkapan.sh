@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 #
 # programming.sh
 # Copyright (C) 2016 Rizki Mufrizal <mufrizalrizki@gmail.com>
@@ -18,15 +18,15 @@ sudo dpkg -i vagrant_1.8.1_x86_64.deb
 
 echo "download spring tool suite"
 mkdir -p /home/$user/programming/IDE/sts/
-wget http://dist.springsource.com/release/STS/3.7.2.RELEASE/dist/e4.5/spring-tool-suite-3.7.2.RELEASE-e4.5.1-linux-gtk-x86_64.tar.gz
-tar -xvzf spring-tool-suite-3.7.2.RELEASE-e4.5.1-linux-gtk-x86_64.tar.gz
+wget http://dist.springsource.com/release/STS/3.7.3.RELEASE/dist/e4.6/spring-tool-suite-3.7.3.RELEASE-e4.6-linux-gtk-x86_64.tar.gz
+tar -xvzf spring-tool-suite-3.7.3.RELEASE-e4.6-linux-gtk-x86_64.tar.gz
 mv sts-bundle/* /home/$user/programming/IDE/sts/
 rmdir sts-bundle/
 
 echo "download visual studio code"
 mkdir -p /home/$user/programming/IDE/VSCode/
-wget https://az764295.vo.msecnd.net/public/0.10.6-release/VSCode-linux64.zip
-unzip VSCode-linux64.zip
+wget https://az764295.vo.msecnd.net/stable/f291f4ad600767626b24a4b15816b04bee9a3049/VSCode-linux-x64-stable.zip
+unzip VSCode-linux-x64-stable.zip
 mv VSCode-linux-x64/* /home/$user/programming/IDE/VSCode/
 rmdir VSCode-linux-x64/
 
@@ -41,17 +41,17 @@ echo "download gitbook editor"
 wget http://downloads.editor.gitbook.com/download/linux-64-bit?user=$usermufrizal
 
 echo "download phpmyadmin"
-wget https://files.phpmyadmin.net/phpMyAdmin/4.5.4.1/phpMyAdmin-4.5.4.1-all-languages.zip
+wget https://files.phpmyadmin.net/phpMyAdmin/4.6.0/phpMyAdmin-4.6.0-all-languages.zip
 mkdir -p /var/www/html/phpmyadmin/
-unzip phpMyAdmin-4.5.4.1-all-languages.zip
-mv phpMyAdmin-4.5.4.1-all-languages/* /var/www/html/phpmyadmin/
-rmdir phpMyAdmin-4.5.4.1-all-languages
+unzip phpMyAdmin-4.6.0-all-languages.zip
+mv phpMyAdmin-4.6.0-all-languages/* /var/www/html/phpmyadmin/
+rmdir phpMyAdmin-4.6.0-all-languages
 
 echo "download jaspertsoft studio"
 mkdir -p /home/$user/programming/IDE/TIBCOJaspersoftStudio/
-wget http://netix.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.2.0/TIBCOJaspersoftStudio-6.2.0.final-linux-x86_64.tgz
-tar -xvzf TIBCOJaspersoftStudio-6.2.0.final-linux-x86_64.tgz
-mv TIBCOJaspersoftStudio-6.2.0.final/* /home/$user/programming/IDE/TIBCOJaspersoftStudio/
+wget http://tenet.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.2.1/TIBCOJaspersoftStudio-6.2.1.final-linux-x86_64.tgz
+tar -xvzf TIBCOJaspersoftStudio-6.2.1.final-linux-x86_64.tgz
+mv TIBCOJaspersoftStudio-6.2.1.final/* /home/$user/programming/IDE/TIBCOJaspersoftStudio/
 
 echo "download redis"
 mkdir -p /home/$user/programming/database/redis
