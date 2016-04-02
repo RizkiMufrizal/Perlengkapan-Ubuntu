@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 #
 # programming.sh
 # Copyright (C) 2016 Rizki Mufrizal <mufrizalrizki@gmail.com>
