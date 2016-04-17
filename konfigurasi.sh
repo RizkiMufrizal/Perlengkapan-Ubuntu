@@ -15,7 +15,7 @@ read user
 
 echo "install node js"
 nvm install stable
-npm install -g cordova ionic gulp grunt-cli bower coffeelint coffee-script nodemon sails typescript webpack yo generator-karma generator-angular
+npm install -g bower coffeelint coffee-script cordova generator-angular generator-karma grunt-cli gulp http-server ionic jspm lite-server mean-cli mocha nodemon react-native-cli sails typescript webpack webpack-dev-server yo
 
 echo "konfigurasi git"
 git config --global user.name "$username"
@@ -40,10 +40,10 @@ sudo cp environment /etc/environment
 
 echo "konfigurasi shortcut"
 sudo cp shortcut/* /usr/share/applications/
-sudo chmod a+x /usr/share/applications/Android Studio.desktop
-sudo chmod a+x /usr/share/applications/Jaspersoft Studio.desktop
-sudo chmod a+x /usr/share/applications/Spring Tool Suite.desktop
-sudo chmod a+x /usr/share/applications/Visual Studio Code.desktop
+sudo chmod a+x /usr/share/applications/Android\ Studio.desktop
+sudo chmod a+x /usr/share/applications/Jaspersoft\ Studio.desktop
+sudo chmod a+x /usr/share/applications/Spring\ Tool\ Suite.desktop
+sudo chmod a+x /usr/share/applications/Visual\ Studio\ Code.desktop
 
 echo "konfigurasi gcc dan g++"
 sudo update-alternatives --remove-all gcc
