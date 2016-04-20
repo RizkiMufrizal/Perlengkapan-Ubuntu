@@ -25,11 +25,11 @@ rmdir apache-maven-3.3.9/
 
 echo "install ant"
 mkdir -p /home/$user/programming/build-tool/apache-ant
-wget http://mirror.wanxp.id/apache//ant/binaries/apache-ant-1.9.6-bin.tar.gz
-tar -xvzf apache-ant-1.9.6-bin.tar.gz
-rm apache-ant-1.9.6-bin.tar.gz
-mv apache-ant-1.9.6/* /home/$user/programming/build-tool/apache-ant/
-rmdir apache-ant-1.9.6/
+wget http://mirror.wanxp.id/apache//ant/binaries/apache-ant-1.9.7-bin.tar.gz
+tar -xvzf apache-ant-1.9.7-bin.tar.gz
+rm apache-ant-1.9.7-bin.tar.gz
+mv apache-ant-1.9.7/* /home/$user/programming/build-tool/apache-ant/
+rmdir apache-ant-1.9.7/
 
 echo "install gradle"
 mkdir -p /home/$user/programming/build-tool/gradle
@@ -42,7 +42,7 @@ rmdir gradle-2.12/
 echo "install composer"
 mkdir -p /home/$user/programming/build-tool/composer
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /home/$user/programming/build-tool/composer/
+mv composer.phar /home/$user/programming/build-tool/composer/composer
 
 echo "install play framework"
 mkdir -p /home/$user/programming/build-tool/play-framework
