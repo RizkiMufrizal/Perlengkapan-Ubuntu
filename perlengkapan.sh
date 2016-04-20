@@ -15,6 +15,7 @@ wget http://download.netbeans.org/netbeans/8.1/final/bundles/netbeans-8.1-linux.
 echo "download vagrant"
 wget https://releases.hashicorp.com/vagrant/1.8.1/vagrant_1.8.1_x86_64.deb
 sudo dpkg -i vagrant_1.8.1_x86_64.deb
+rm -rf vagrant_1.8.1_x86_64.deb
 
 echo "download spring tool suite"
 mkdir -p /home/$user/programming/IDE/sts/
@@ -25,15 +26,14 @@ rmdir sts-bundle/
 
 echo "download visual studio code"
 mkdir -p /home/$user/programming/IDE/VSCode/
-wget https://az764295.vo.msecnd.net/stable/f291f4ad600767626b24a4b15816b04bee9a3049/VSCode-linux-x64-stable.zip
-unzip VSCode-linux-x64-stable.zip
-mv VSCode-linux-x64/* /home/$user/programming/IDE/VSCode/
-rmdir VSCode-linux-x64/
+wget https://az764295.vo.msecnd.net/stable/fa6d0f03813dfb9df4589c30121e9fcffa8a8ec8/vscode-amd64.deb
+sudo dpkg -i vscode-amd64.deb
+rm -rf vscode-amd64.deb
 
 echo "download android studio"
 mkdir -p /home/$user/programming/IDE/android-studio/
-wget https://dl.google.com/dl/android/studio/ide-zips/1.5.1.0/android-studio-ide-141.2456560-linux.zip
-unzip android-studio-ide-141.2456560-linux.zip
+wget https://dl.google.com/dl/android/studio/ide-zips/2.0.0.20/android-studio-ide-143.2739321-linux.zip
+unzip android-studio-ide-143.2739321-linux.zip
 mv android-studio/* /home/$user/programming/IDE/android-studio/
 rmdir android-studio/
 
