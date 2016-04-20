@@ -24,10 +24,6 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 echo "tambah repo gimp"
 sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
 
-# baru trusty
-echo "tambah repo ubuntu tweak"
-sudo add-apt-repository -y ppa:tualatrix/ppa
-
 echo "tambah repo libree office"
 sudo add-apt-repository -y ppa:libreoffice/ppa
 
@@ -52,24 +48,13 @@ sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 echo "tambah repo gcc"
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
-# baru trusty
-echo "tambah repo mariadb"
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb [arch=amd64,i386] http://mariadb.biz.net.id/repo/10.1/ubuntu trusty main'
-
-# baru trusty
-echo "tambah repository mongodb"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
-echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-
 echo "tambah repo postgresql"
 echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
 sudo apt-key add -
 
-# baru trusty
 echo "tambah repo virtual box"
-echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" | sudo tee -a /etc/apt/sources.list
+echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" | sudo tee -a /etc/apt/sources.list
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 
 echo "update"
@@ -81,15 +66,15 @@ sudo apt upgrade -y
 echo "dist-upgrade"
 sudo apt dist-upgrade -y
 
-echo "setting password pada mariadb"
+echo "setting password pada mysql"
 sudo apt install -y debconf-utils
-sudo debconf-set-selections <<< "mariadb-server-10.1 mysql-server/root_password password root"
-sudo debconf-set-selections <<< "mariadb-server-10.1 mysql-server/root_password_again password root"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password root"
+sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
 
 echo "install aplikasi"
-sudo apt install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer ubuntu-tweak postgresql-9.4 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras ubuntu-restricted-extras synaptic libavcodec-extra compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager nautilus-open-terminal apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mariadb-server mariadb-client mongodb-org clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim zip unzip
+sudo apt install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer postgresql-9.4 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras ubuntu-restricted-extras synaptic libavcodec-extra compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mysql-server mysql-client clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim zip unzip
 
 echo "konfigurasi php"
 sudo chmod 777 -R /var/www/*
 echo "<?php phpinfo();" | sudo tee -a /var/www/html/info.php
-sudo service apache2 restart
+sudo systemctl restart apache2
