@@ -7,7 +7,7 @@
 #
 
 echo "tambah repo java 8"
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:webupd8team/java
 
 echo "tambah repo git"
 sudo add-apt-repository -y ppa:git-core/ppa
@@ -34,7 +34,7 @@ echo "tambah repo vlc"
 sudo add-apt-repository -y ppa:videolan/stable-daily
 
 echo "tambah repo php7"
-sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository -y ppa:ondrej/php
 
 echo "tambah repo apache server"
 sudo add-apt-repository -y ppa:ondrej/apache2
@@ -71,8 +71,11 @@ sudo apt install -y debconf-utils
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password root"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
 
+echo "install java 8 with silent options"
+echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+
 echo "install aplikasi"
-sudo apt install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer postgresql-9.5 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras ubuntu-restricted-extras synaptic libavcodec-extra compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mysql-server mysql-client clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim zip unzip
+sudo apt install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer postgresql-9.5 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mysql-server mysql-client clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim zip unzip
 
 echo "konfigurasi php"
 sudo chmod 777 -R /var/www/*
