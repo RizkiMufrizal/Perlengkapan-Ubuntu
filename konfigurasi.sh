@@ -24,7 +24,7 @@ git config --global color.ui true
 ssh-keygen -t rsa -C "$email"
 
 echo "konfigurasi environment"
-touch environment
+touch /home/$user/environment
 echo "ANT_HOME=/home/$user/programming/build-tool/apache-ant" | tee -a /home/$user/environment
 echo "ANDROID_HOME=/home/$user/Android/Sdk" | tee -a /home/$user/environment
 echo "M2_HOME=/home/$user/programming/build-tool/apache-maven" | tee -a /home/$user/environment
@@ -36,14 +36,53 @@ echo "NVM_HOME=/home/$user/.nvm" | tee -a /home/$user/environment
 echo "REDIS_HOME=/home/$user/programming/database/redis" | tee -a /home/$user/environment
 echo "RVM_HOME=/home/$user/.rvm" | tee -a /home/$user/environment
 echo "\nPATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/home/$user/programming/build-tool/apache-ant/bin:/home/$user/programming/build-tool/apache-maven/bin:/home/$user/programming/build-tool/gradle/bin:/home/$user/programming/build-tool/play-framework/bin:/home/$user/programming/build-tool/composer:/home/$user/.nvm:/home/$user/Android/Sdk/platform-tools:/home/$user/Android/Sdk/tools:/home/$user/.rvm/bin:file:/home/$user/programming/database/redis/src\"" | tee -a /home/$user/environment
-sudo cp environment /etc/environment
+sudo cp /home/$user/environment /etc/environment
 
 echo "konfigurasi shortcut"
-sudo cp shortcut/* /usr/share/applications/
+
+echo "konfigurasi shortcut android studio"
+touch /home/$user/Android\ Studio.desktop
+echo "#!/usr/bin/env xdg-open" | tee -a /home/$user/Android\ Studio.desktop
+echo "[Desktop Entry]" | tee -a /home/$user/Android\ Studio.desktop
+echo "Version=1.0" | tee -a /home/$user/Android\ Studio.desktop
+echo "Type=Application" | tee -a /home/$user/Android\ Studio.desktop
+echo "Terminal=false" | tee -a /home/$user/Android\ Studio.desktop
+echo "Icon[en_US]=/home/$user/programming/IDE/android-studio/bin/studio.png" | tee -a /home/$user/Android\ Studio.desktop
+echo "Name[en_US]=Android Studio" | tee -a /home/$user/Android\ Studio.desktop
+echo "Name=Android Studio" | tee -a /home/$user/Android\ Studio.desktop
+echo "Icon=/home/$user/programming/IDE/android-studio/bin/studio.png" | tee -a /home/$user/Android\ Studio.desktop
+
+echo "konfigurasi shortcut Jaspersoft studio"
+touch /home/$user/Jaspersoft\ Studio.desktop
+echo "#!/usr/bin/env xdg-open" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "[Desktop Entry]" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Version=1.0" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Type=Application" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Terminal=false" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Icon[en_US]=/home/$user/programming/IDE/TIBCOJaspersoftStudio/icon.xpm" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Name[en_US]=Jaspersoft Studio" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Name=Jaspersoft Studio" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+echo "Icon=/home/$user/programming/IDE/TIBCOJaspersoftStudio/icon.xpm" | tee -a /home/$user/Jaspersoft\ Studio.desktop
+
+echo "konfigurasi shortcut Spring tools Suite"
+touch /home/$user/Spring\ Tool\ Suite.desktop
+echo "#!/usr/bin/env xdg-open" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "[Desktop Entry]" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Version=1.0" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Type=Application" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Terminal=false" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Icon[en_US]=/home/$user/programming/IDE/sts/sts-3.7.2.RELEASE/icon.xpm" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Name[en_US]=Spring Tool Suite" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Name=Spring Tool Suite" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+echo "Icon=/home/$user/programming/IDE/sts/sts-3.7.2.RELEASE/icon.xpm" | tee -a /home/$user/Spring\ Tool\ Suite.desktop
+
+sudo mv /home/$user/Android\ Studio.desktop /usr/share/applications/
+sudo mv /home/$user/Jaspersoft\ Studio.desktop /usr/share/applications/
+sudo mv /home/$user/Spring\ Tool\ Suite.desktop /usr/share/applications/
+
 sudo chmod a+x /usr/share/applications/Android\ Studio.desktop
 sudo chmod a+x /usr/share/applications/Jaspersoft\ Studio.desktop
 sudo chmod a+x /usr/share/applications/Spring\ Tool\ Suite.desktop
-sudo chmod a+x /usr/share/applications/Visual\ Studio\ Code.desktop
 
 echo "konfigurasi gcc dan g++"
 sudo update-alternatives --remove-all gcc
