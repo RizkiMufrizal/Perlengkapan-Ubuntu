@@ -53,10 +53,6 @@ echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" | sudo tee 
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | \
 sudo apt-key add -
 
-echo "tambah repo virtual box"
-echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" | sudo tee -a /etc/apt/sources.list
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-
 echo "update"
 sudo apt update
 
@@ -68,14 +64,14 @@ sudo apt dist-upgrade -y
 
 echo "setting password pada mysql"
 sudo apt install -y debconf-utils
-sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password root"
-sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
+echo mysql-server mysql-server/root_password password root | sudo debconf-set-selections
+echo mysql-server mysql-server/root_password_again password root | sudo debconf-set-selections
 
 echo "install java 8 with silent options"
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
 
 echo "install aplikasi"
-sudo apt install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer postgresql-9.5 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql software-properties-common mysql-server mysql-client clementine xclip virtualbox-5.0 sublime-text-installer gcc-5 g++-5 vim zip unzip
+sudo apt install -y atom chromium-browser git gimp vlc browser-plugin-vlc oracle-java8-installer postgresql-9.5 pgadmin3 gimp-data gimp-plugin-registry gimp-data-extras compiz-plugins-extra compiz compiz-plugins compiz-core compiz-plugins-default compizconfig-settings-manager apache2 php7.0-cli php7.0-mysql php7.0-fpm php7.0-gd php7.0 libapache2-mod-php7.0 php7.0-mcrypt php7.0-common php7.0-snmp snmp php7.0-curl php7.0-json php7.0-pgsql mysql-server mysql-client clementine xclip sublime-text-installer vim zip unzip
 
 echo "konfigurasi php"
 sudo chmod 777 -R /var/www/*
