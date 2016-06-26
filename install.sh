@@ -20,6 +20,9 @@ echo "tambah repo java 8"
 sudo add-apt-repository -y ppa:no1wantdthisname/openjdk-fontfix
 sudo add-apt-repository -y ppa:openjdk-r/ppa
 
+echo "tambah repo vlc"
+sudo add-apt-repository -y ppa:videolan/master-daily
+
 echo "tambah repo git"
 sudo add-apt-repository -y ppa:git-core/ppa
 
