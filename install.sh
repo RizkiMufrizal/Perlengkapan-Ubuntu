@@ -41,9 +41,6 @@ sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
 echo "tambah repo libree office"
 sudo add-apt-repository -y ppa:libreoffice/ppa
 
-echo "tambah repo vlc"
-sudo add-apt-repository -y ppa:videolan/stable-daily
-
 echo "tambah repo php7"
 sudo add-apt-repository -y ppa:ondrej/php
 
